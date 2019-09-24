@@ -1,0 +1,43 @@
+/* === IMPORTS === */
+@import "~font-awesome/css/font-awesome.min.css";
+
+/* === GENERAL VARIBLES === */
+/* COLORS */
+$main-background: #f5f6fa;
+$elem-background: #ffffff;
+
+$gray-dark: #292f4d;
+$gray-middle: #545971;
+$gray-light: #8e92a2;
+$gray-lighter: #bbbdc9;
+$gray-pils: #fafbff;
+$gray-hamburger: #cfd1db;
+
+$red: #d1495b;
+$red-light: #faecee;
+
+$blue: #0c42b0;
+$blue-btn: #0160ee;
+$blue-middle: #4486ec;
+$blue-light: #7faff6;
+$blue-lighter: #e6ecf7;
+
+$border-color-header: #ececec;
+$border-color-main: #e3e3e5;
+
+/* ELEMENT PROPERTIES */
+$padding-left: 2.5rem;
+$padding-right: 2.5rem;
+$padding-general: 0 $padding-right 0 $padding-left;
+$montserrat: 'Montserrat', sans-serif;
+
+$box-shadow: 0 .125rem .375rem .0625rem rgba(0, 0, 0, 0.12);
+
+/* === GENERAL STYLES == */
+body{background-color: $main-background; font-family: $montserrat; margin: 0 3.5rem;}
+.block-wrapper{padding: $padding-general;}
+
+h1{font-size: 2.25rem; font-weight: 500; color: $gray-dark; margin: 1.5rem 0;}
+h2{font-size: 1.75rem; font-weight: 500; color: $gray-dark; margin: 0 0 1rem; }
+h3{font-size: 1.125rem; font-weight: 500; color: $gray-dark; margin: 0 0 1rem;}
+p{font-size: 1.125rem; font-weight: 400; color: $gray-light; margin: 0 0 1rem;}
