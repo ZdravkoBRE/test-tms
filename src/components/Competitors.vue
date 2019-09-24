@@ -49,6 +49,7 @@
             </div>
 
             <div class="content-inner">
+
                 <div class="sub-heading">
                     <div class="sub-heading-text">
                         <h2>
@@ -59,17 +60,24 @@
                         </p>
                     </div>
                     <div class="display-item-holder">
-                        <div class="display-item-btn row-display"></div>
-                        <div class="display-item-btn column-dsplay"></div>
+                        <div class="display-item-btn row-display active">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <div class="display-item-btn column-display">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
                     </div>
                 </div>
 
                 <div class="items-holder">
+
                     <div class="item add-item">
                         <div class="add-item-inner">
-                            <div class="add-item-btn">
-                                <i class="fa fa-plus"></i>
-                            </div>
+                            <div class="add-item-btn"></div>
                             <h3>
                                 New Competitor
                             </h3>
@@ -77,8 +85,8 @@
                     </div>
 
                     <div class="item">
-                        <div class="img-holder">
-                            <img src="" alt="">
+                        <div class="img-holder" style="">
+                            <!-- <img src="../assets/pictures/photo.jpg" alt=""> -->
                             <div class="indicator direct">Direct</div>
                         </div>
                         <div class="item-content">
@@ -113,10 +121,11 @@
                             </div>
                         </div>
                     </div>
+
                     <div class="item">
                         <div class="img-holder">
                             <img src="" alt="">
-                            <div class="indicator direct">Direct</div>
+                            <div class="indicator indirect">Indirect</div>
                         </div>
                         <div class="item-content">
                             <h3>
@@ -153,12 +162,20 @@
                 </div>
 
                 <div class="details-section">
-
+                    <button class="details-btn">
+                        <i class="fa fa-plus"></i>
+                    </button>
+                    <h3>
+                        Add More Details
+                    </h3>
+                    <p>
+                        See all the tips and tricks and add a more detailed description of this step
+                    </p>
                 </div>
             </div>
         </div>
 
-        <footer class="footer">
+        <footer class="footer block-wrapper">
             <div class="btn-holder">
                 <button>
                     <span>
@@ -170,9 +187,11 @@
                     <i class="fa fa-arrow-left"></i>
                 </button>
             </div>
+
             <div class="progress-area">
 
             </div>
+            
             <div class="btn-holder">
                 <button>
                     <span>
@@ -195,7 +214,8 @@ export default {
 </script>
 
 <style lang="scss">
-@import "../../public/scss/main.scss";
+@import "../assets/scss/main.scss";
+
     *{box-sizing: border-box}
 
     /* HEADER SECTION start */
@@ -227,11 +247,8 @@ export default {
     }
     /* HEADER SECTION end */
 
-    .heading{
-        display: flex;
-        justify-content: space-between;
-        border-bottom: 1px solid $border-color-main;
-        padding-bottom: .5rem;
+    /* === HEADING SECTION start === */
+    .heading{display: flex; justify-content: space-between; border-bottom: 1px solid $border-color-main2; padding-bottom: .5rem;
 
         h1{flex: 3 1 auto;}
     }
@@ -244,22 +261,55 @@ export default {
             i{position: absolute; left: 1rem; font-size: 1.5rem; color: $gray-light;}
         }
     }
+    /* === HEADING SECTION end === */
 
-    .sub-heading-text{margin: 2.5rem 0 1.5rem;
+    /* === SUB-HEADING SECTION start === */
+    .sub-heading{display: flex;     justify-content: center;
+    align-items: center;}
+
+    .sub-heading-text{flex: 1 1 auto; margin: 2.5rem 0 1.5rem;
         h2{margin-bottom: .5rem;}
     }
 
-    .items-holder{display: flex; flex-flow: row wrap;}
-    .item{flex: 0 1 calc( 20% - 2rem); background-color: $elem-background; margin-right: 2.5rem; box-shadow: $box-shadow; border-radius: .5rem; 
+    .display-item-holder{display: flex; flex: 0 0 auto; flex-wrap: wrap; border: 1px solid $border-color-main2; border-radius: .25rem; overflow: hidden;}
+    .display-item-btn{width: 3rem; height: 3rem; display: flex; background-color: $elem-background; border-right: 1px solid $border-color-main2; padding: 1rem .75rem; justify-content: space-between; cursor: pointer;
+        &:last-child{border-right: none;}
+        &.active span{background-color: $blue;}
+        span{display: block; background-color: $gray-hamburger; border-radius: .125rem;}
 
-        &:nth-child(5){margin-right: 0;}
+        &.row-display{flex-direction: row;
+            span{width: .375rem;}
+        }
+        &.column-display{flex-direction: column;
+            span{height: .25rem;}
+        }
     }
-    .img-holder{min-height: 5.5rem;}
+    /* === SUB-HEADING SECTION end === */
+
+    /* === ITEMS SECTION start === */
+    .items-holder{display: flex; flex-flow: row wrap;}
+    .item{position: relative; flex: 0 1 calc( 20% - 2rem); background-color: $elem-background; margin: 1.25rem 2.5rem 1.5rem 0; box-shadow: $box-shadow; border-radius: .5rem; overflow: hidden;
+    
+        &:nth-child(5n){margin-right: 0;}
+        &.add-item{background-color: transparent; box-shadow: none; border: 1px dashed $gray-middle;}
+    }
+
+    .add-item-inner{position: absolute; width: 100%; height: 100%; display: flex; align-items: center; flex-direction: column; justify-content: center;}
+    .add-item-btn{position: relative; max-width: 7.5rem; width: 100%; max-height: 7.5rem; height: 100%; background-color: $blue-lighter; border-radius: 50%; margin-bottom: 1rem; cursor: pointer;
+        &::after{content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); display: block; width: 30%; height:.1875rem; background-color: $blue;}
+        &::before{@extend .add-item-btn::after; width: .1875rem; height: 30%;}
+    }
+
+    .img-holder{min-height: 10.5rem; position: relative; background-image:url(../assets/images/photo.jpg); background-position: center; background-size: cover; background-repeat: no-repeat;
+        .indicator{position: absolute; bottom: 1rem; right: 1rem; display: block; min-width: 6rem; border-radius: .25rem; font-size: .875rem; text-align: center; line-height: 1.8; color: #fff; padding: .25rem .5rem;
+            &.direct{background-color: $yelow;}
+            &.indirect{background-color: $blue-middle;}
+        }
+    }
 
     .item-content{padding: 1.5rem .75rem .75rem; border-top: 1px solid $border-color-main;
         h3{text-align: center;}
     }
-
     .item-content-inner{display: flex; flex-flow: column wrap;}
     .item-content-segment{display: flex; justify-content: space-between; border-bottom: 1px dashed $border-color-main; padding: .75rem 0; margin: 0 .75rem;
 
@@ -270,6 +320,17 @@ export default {
             &.list-data{font-weight: 500;}
         }
     }
+    /* === ITEMS SECTION end === */
 
+    /* === DETAILS SECTION start === */
+    .details-section{position: relative; border: 1px dashed $border-color-main3; border-radius: .75rem; background-color: $elem-background; text-align: center; margin-top: 4.5rem; background-image: url("../assets/images/bulb.png"); background-size: contain; background-repeat: no-repeat;background-position: 90% 0;
+        p{margin-bottom: 1.5rem}
+    }
+    .details-btn{$btn-dim:3.5rem; background: $blue-btn; border: none; color: #fff; width: $btn-dim; height: $btn-dim; border-radius: 50%; position: relative; top: calc( -#{$btn-dim} / 2); cursor: pointer; outline: none;}
+    /* === DETAILS SECTION end === */
+
+    /* === FOOTER SECTION start === */
+    .footer{display: flex; justify-content: space-between;}
+    /* === FOOTER SECTION end === */
 
 </style>
