@@ -84,14 +84,52 @@
                         </div>
                     </div>
 
-                    <div class="item">
+                    <div v-for="item in allItems" :key="item.id" class="item">
                         <div class="img-holder" style="">
                             <!-- <img src="../assets/pictures/photo.jpg" alt=""> -->
-                            <div class="indicator direct">Direct</div>
+                            <div class="indicator direct" :class="[item.indicator ? 'direct' : 'indirect']" >{{ item.direct }}</div>
                         </div>
                         <div class="item-content">
                             <h3>
-                                Competitor 1
+                                Competitor {{ item.id }}
+                            </h3>
+                            <div class="item-content-inner">
+                                <div class="item-content-segment">
+                                    <span class="list-prop">Location</span>
+                                    <span class="list-data">{{ item.location }}</span>
+                                </div>
+                                <div class="item-content-segment">
+                                    <span class="list-prop">Quality</span>
+                                    <span class="list-data">{{ item.quality }}</span>
+                                </div>
+                                <div class="item-content-segment">
+                                    <span class="list-prop">Image</span>
+                                    <span class="list-data">{{ item.image }}</span>
+                                </div>
+                                <div class="item-content-segment">
+                                    <span class="list-prop">Location</span>
+                                    <span class="list-data">{{ item.place }}</span>
+                                </div>
+                                <div class="item-content-segment">
+                                    <span class="list-prop">Quality</span>
+                                    <span class="list-data">{{ item.quality }}</span>
+                                </div>
+                                <div class="item-content-segment summary">
+                                    <span class="list-prop">Threat Level</span>
+                                    <span class="list-data">{{ item.threat }}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- <div class="item">
+                        <div class="img-holder">
+                            <img src="" alt="">
+                            <div class="indicator indirect">Indirect</div>
+                        </div>
+                        <div class="item-content">
+                            <h3>
+                                Competitor 2
                             </h3>
                             <div class="item-content-inner">
                                 <div class="item-content-segment">
@@ -159,6 +197,234 @@
                             </div>
                         </div>
                     </div>
+
+                    <div class="item">
+                        <div class="img-holder">
+                            <img src="" alt="">
+                            <div class="indicator indirect">Indirect</div>
+                        </div>
+                        <div class="item-content">
+                            <h3>
+                                Competitor 2
+                            </h3>
+                            <div class="item-content-inner">
+                                <div class="item-content-segment">
+                                    <span class="list-prop">Location</span>
+                                    <span class="list-data">Poor</span>
+                                </div>
+                                <div class="item-content-segment">
+                                    <span class="list-prop">Quality</span>
+                                    <span class="list-data">Fair</span>
+                                </div>
+                                <div class="item-content-segment">
+                                    <span class="list-prop">Image</span>
+                                    <span class="list-data">Good</span>
+                                </div>
+                                <div class="item-content-segment">
+                                    <span class="list-prop">Location</span>
+                                    <span class="list-data">Very Good</span>
+                                </div>
+                                <div class="item-content-segment">
+                                    <span class="list-prop">Quality</span>
+                                    <span class="list-data">Excellent</span>
+                                </div>
+                                <div class="item-content-segment summary">
+                                    <span class="list-prop">Threat Level</span>
+                                    <span class="list-data">High</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <div class="img-holder">
+                            <img src="" alt="">
+                            <div class="indicator indirect">Indirect</div>
+                        </div>
+                        <div class="item-content">
+                            <h3>
+                                Competitor 2
+                            </h3>
+                            <div class="item-content-inner">
+                                <div class="item-content-segment">
+                                    <span class="list-prop">Location</span>
+                                    <span class="list-data">Poor</span>
+                                </div>
+                                <div class="item-content-segment">
+                                    <span class="list-prop">Quality</span>
+                                    <span class="list-data">Fair</span>
+                                </div>
+                                <div class="item-content-segment">
+                                    <span class="list-prop">Image</span>
+                                    <span class="list-data">Good</span>
+                                </div>
+                                <div class="item-content-segment">
+                                    <span class="list-prop">Location</span>
+                                    <span class="list-data">Very Good</span>
+                                </div>
+                                <div class="item-content-segment">
+                                    <span class="list-prop">Quality</span>
+                                    <span class="list-data">Excellent</span>
+                                </div>
+                                <div class="item-content-segment summary">
+                                    <span class="list-prop">Threat Level</span>
+                                    <span class="list-data">High</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <div class="img-holder">
+                            <img src="" alt="">
+                            <div class="indicator indirect">Indirect</div>
+                        </div>
+                        <div class="item-content">
+                            <h3>
+                                Competitor 2
+                            </h3>
+                            <div class="item-content-inner">
+                                <div class="item-content-segment">
+                                    <span class="list-prop">Location</span>
+                                    <span class="list-data">Poor</span>
+                                </div>
+                                <div class="item-content-segment">
+                                    <span class="list-prop">Quality</span>
+                                    <span class="list-data">Fair</span>
+                                </div>
+                                <div class="item-content-segment">
+                                    <span class="list-prop">Image</span>
+                                    <span class="list-data">Good</span>
+                                </div>
+                                <div class="item-content-segment">
+                                    <span class="list-prop">Location</span>
+                                    <span class="list-data">Very Good</span>
+                                </div>
+                                <div class="item-content-segment">
+                                    <span class="list-prop">Quality</span>
+                                    <span class="list-data">Excellent</span>
+                                </div>
+                                <div class="item-content-segment summary">
+                                    <span class="list-prop">Threat Level</span>
+                                    <span class="list-data">High</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <div class="img-holder">
+                            <img src="" alt="">
+                            <div class="indicator indirect">Indirect</div>
+                        </div>
+                        <div class="item-content">
+                            <h3>
+                                Competitor 2
+                            </h3>
+                            <div class="item-content-inner">
+                                <div class="item-content-segment">
+                                    <span class="list-prop">Location</span>
+                                    <span class="list-data">Poor</span>
+                                </div>
+                                <div class="item-content-segment">
+                                    <span class="list-prop">Quality</span>
+                                    <span class="list-data">Fair</span>
+                                </div>
+                                <div class="item-content-segment">
+                                    <span class="list-prop">Image</span>
+                                    <span class="list-data">Good</span>
+                                </div>
+                                <div class="item-content-segment">
+                                    <span class="list-prop">Location</span>
+                                    <span class="list-data">Very Good</span>
+                                </div>
+                                <div class="item-content-segment">
+                                    <span class="list-prop">Quality</span>
+                                    <span class="list-data">Excellent</span>
+                                </div>
+                                <div class="item-content-segment summary">
+                                    <span class="list-prop">Threat Level</span>
+                                    <span class="list-data">High</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <div class="img-holder">
+                            <img src="" alt="">
+                            <div class="indicator indirect">Indirect</div>
+                        </div>
+                        <div class="item-content">
+                            <h3>
+                                Competitor 2
+                            </h3>
+                            <div class="item-content-inner">
+                                <div class="item-content-segment">
+                                    <span class="list-prop">Location</span>
+                                    <span class="list-data">Poor</span>
+                                </div>
+                                <div class="item-content-segment">
+                                    <span class="list-prop">Quality</span>
+                                    <span class="list-data">Fair</span>
+                                </div>
+                                <div class="item-content-segment">
+                                    <span class="list-prop">Image</span>
+                                    <span class="list-data">Good</span>
+                                </div>
+                                <div class="item-content-segment">
+                                    <span class="list-prop">Location</span>
+                                    <span class="list-data">Very Good</span>
+                                </div>
+                                <div class="item-content-segment">
+                                    <span class="list-prop">Quality</span>
+                                    <span class="list-data">Excellent</span>
+                                </div>
+                                <div class="item-content-segment summary">
+                                    <span class="list-prop">Threat Level</span>
+                                    <span class="list-data">High</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <div class="img-holder">
+                            <img src="" alt="">
+                            <div class="indicator indirect">Indirect</div>
+                        </div>
+                        <div class="item-content">
+                            <h3>
+                                Competitor 2
+                            </h3>
+                            <div class="item-content-inner">
+                                <div class="item-content-segment">
+                                    <span class="list-prop">Location</span>
+                                    <span class="list-data">Poor</span>
+                                </div>
+                                <div class="item-content-segment">
+                                    <span class="list-prop">Quality</span>
+                                    <span class="list-data">Fair</span>
+                                </div>
+                                <div class="item-content-segment">
+                                    <span class="list-prop">Image</span>
+                                    <span class="list-data">Good</span>
+                                </div>
+                                <div class="item-content-segment">
+                                    <span class="list-prop">Location</span>
+                                    <span class="list-data">Very Good</span>
+                                </div>
+                                <div class="item-content-segment">
+                                    <span class="list-prop">Quality</span>
+                                    <span class="list-data">Excellent</span>
+                                </div>
+                                <div class="item-content-segment summary">
+                                    <span class="list-prop">Threat Level</span>
+                                    <span class="list-data">High</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
                 </div>
 
                 <div class="details-section">
@@ -177,7 +443,7 @@
 
         <footer class="footer block-wrapper">
             <div class="btn-holder">
-                <button>
+                <button class="back">
                     <span>
                         <strong>
                             Back
@@ -189,18 +455,24 @@
             </div>
 
             <div class="progress-area">
-
+                <h4>
+                    Status
+                </h4>
+                <div class="pills-holder">
+                    <span class="left active">In Progress</span>
+                    <span class="rigth">Completed</span>
+                </div>
             </div>
             
             <div class="btn-holder">
-                <button>
+                <button class="next">
                     <span>
                         <strong>
-                            Back
+                            NEXT
                         </strong>
                     </span>
-                    <span>Customers</span>
-                    <i class="fa fa-arrow-left"></i>
+                    <span>Comparison</span>
+                    <i class="fa fa-arrow-right"></i>
                 </button>
             </div>
         </footer>
@@ -208,8 +480,10 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
 export default {
-    name: "Competitors"
+    name: "Competitors",
+    computed: mapGetters(['allItems'])
 }
 </script>
 
@@ -217,7 +491,7 @@ export default {
 @import "../assets/scss/main.scss";
 
     *{box-sizing: border-box}
-
+   
     /* HEADER SECTION start */
     .header{margin: 1.5rem 0;}
     .header-inner{display: flex; border-radius: .5rem; box-shadow: $box-shadow;
@@ -323,14 +597,120 @@ export default {
     /* === ITEMS SECTION end === */
 
     /* === DETAILS SECTION start === */
-    .details-section{position: relative; border: 1px dashed $border-color-main3; border-radius: .75rem; background-color: $elem-background; text-align: center; margin-top: 4.5rem; background-image: url("../assets/images/bulb.png"); background-size: contain; background-repeat: no-repeat;background-position: 90% 0;
+    .details-section{position: relative; border: 1px dashed $border-color-main3; border-radius: .75rem; background-color: $elem-background; text-align: center; margin: 4.5rem 0; background-image: url("../assets/images/bulb.png"); background-size: contain; background-repeat: no-repeat;background-position: 90% 0; padding: 0 1.5rem;
         p{margin-bottom: 1.5rem}
     }
     .details-btn{$btn-dim:3.5rem; background: $blue-btn; border: none; color: #fff; width: $btn-dim; height: $btn-dim; border-radius: 50%; position: relative; top: calc( -#{$btn-dim} / 2); cursor: pointer; outline: none;}
     /* === DETAILS SECTION end === */
 
     /* === FOOTER SECTION start === */
-    .footer{display: flex; justify-content: space-between;}
+    .footer{display: flex; justify-content: space-between; padding-top: 2.5rem; padding-bottom: 2.5rem;}
+    .btn-holder{max-width: 20rem; width: 100%;
+        button{position: relative; width: 100%; font-size: 1.125rem; line-height: 1.4; font-family: inherit; outline: none; background-color: $elem-background; border: none; border-radius: .5rem; box-shadow: $box-shadow; padding: .75rem; cursor: pointer;
+            span{display: block; text-align: left;}
+            i{position: absolute; top: 50%; transform: translateY(-50%); font-size:2rem;}
+
+            &.back{padding-left: 5rem; padding-right: 1.5rem;
+                span{color: $gray-lighter;
+                     strong{color: $gray-dark;}
+                }
+                i{left: 1.5rem; color: $gray-lighter;}
+            }
+            &.next{background-color: $blue-btn; padding-left: 1.5rem; padding-right: 5rem;
+                span{color: $blue-light;
+                     strong{color: #fff;}
+                }
+                i{right: 1.5rem; color: $blue-light;}
+            }
+        }
+    }
+    .progress-area{position: relative; display: flex; align-items: center;
+        h4{position: absolute; top: -2rem; width: 100%; text-align: center; color: $gray-light;}
+    }
+    .pills-holder{position: relative; border: 1px solid $border-color-main2; border-radius: 1.125rem;
+        span{ display: inline-block; padding: .5rem 1rem; font-size: .875rem; border-radius: 1.125rem; color: $gray-lighter;
+            &.active.left{border-right: 1px solid $border-color-main2; background-color: $elem-background; color: $blue; font-weight: 800;}
+            &.active.rigth{border-left: 1px solid $border-color-main2;}
+        }
+    }
     /* === FOOTER SECTION end === */
+
+    /* ===== RESPONSIVE ===== */
+    @media only screen and (max-width: 1440px) {
+        body{margin: 0;}
+        .header-inner {
+            .header-item{font-size: 1rem; padding: .75rem 1.5rem;
+                .pill{padding: .25rem .75rem; font-size: .75rem; border-radius: 1rem;}
+            }
+        }
+
+        .item{position: relative; flex: 0 1 calc( 25% - 1.875rem); 
+            &:nth-child(4n){margin-right: 0;}
+            &:nth-child(5n){margin-right: 2.5rem;}
+        }
+    }
+
+    @media only screen and (max-width: 1280px) {
+        .item{flex: 0 1 calc( 33.3333% - 1.75rem);
+            &:nth-child(3n){margin-right: 0;}
+            &:nth-child(4n){margin-right: 2.5rem;}
+        }
+    }
+
+    @media only screen and (max-width: 992px) {
+        .header-inner{flex-direction: column;}
+        .heading{flex-direction: column; align-items: center; padding-bottom: 1.5rem;}
+
+        .item{flex: 0 1 calc( 33.3333% - 1.75rem);
+            &:nth-child(3n){margin-right: 0;}
+            &:nth-child(4n){margin-right: 2.5rem;}
+        }
+
+        .btn-holder {
+            max-width: 12rem;
+        }
+    }
+
+    @media only screen and (max-width: 768px) {
+        .block-wrapper{padding: 0 1.5rem;}
+
+        .sub-heading{flex-direction: column;}
+        .sub-heading-text{margin-bottom: 0;}
+        .display-item-holder{align-self: flex-end;}
+
+        .item{position: relative; flex: 0 1 calc( 50% - 0.75rem); margin: 1rem 1.5rem 1rem 0;
+            &:nth-child(5n){margin-right: 1.5rem;}
+            &:nth-child(3n){margin-right: 1.5rem;}
+            &:nth-child(2n){margin-right: 0;}
+        }
+
+        .footer{flex-wrap: wrap; margin-bottom: 1.5rem;}
+        .progress-area{flex: 1 0 100%; order: 1;}
+        .pills-holder{margin: 1rem auto;}
+        .btn-holder{order: 2;}
+    }
+
+    @media only screen and (max-width: 500px) {
+        .item{position: relative; flex: 0 1 100%; margin: 1rem 1.5rem 1rem 0;
+            &:nth-child(n){margin-right: 0;}
+            &.add-item{height: 12rem;}
+        }
+
+        .info-block .info-inner {min-width: 8rem; font-size: 1rem; padding: 1rem .5rem 1rem 2.5rem;}
+
+        .btn-holder{max-width: 8rem;
+            button{font-size: .75rem;
+                i{font-size: 1rem}
+                &.back{padding: .5rem .5rem .5rem 2rem;
+                    i{left: .5rem;}
+                }
+
+                &.next{padding: .5rem .2rem .5rem .5rem;
+                    i{right: .5rem;}
+                }
+            }
+        }
+    }
+    
 
 </style>

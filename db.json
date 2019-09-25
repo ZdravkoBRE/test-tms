@@ -1,0 +1,24 @@
+{
+    "items": [
+        {
+            "id": 1,
+            "indicator": true,
+            "direct": "Direct",
+            "location": "Poor",
+            "quality": "Fair",
+            "image": "Good",
+            "place": "Very Good",
+            "threat": "High"
+        },
+        {
+            "id": 2,
+            "indicator": false,
+            "direct": "Indirect",
+            "location": "Poor",
+            "quality": "Fair",
+            "image": "Good",
+            "place": "Very Good",
+            "threat": "High"
+        }
+    ]
+}
