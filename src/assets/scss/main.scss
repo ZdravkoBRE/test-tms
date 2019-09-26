@@ -38,6 +38,7 @@ $montserrat: 'Montserrat', sans-serif;
 $box-shadow: 0 .125rem .375rem .0625rem rgba(0, 0, 0, 0.12);
 
 /* === GENERAL STYLES == */
+*{box-sizing: border-box}
 body{background-color: $main-background; font-family: $montserrat; margin: 0 3.5rem;}
 .block-wrapper{padding: $padding-general;}
 
@@ -46,3 +47,11 @@ h2{font-size: 1.75rem; font-weight: 500; color: $gray-dark; margin: 0 0 1rem; }
 h3{font-size: 1.125rem; font-weight: 500; color: $gray-dark; margin: 0 0 1rem;}
 h4{font-size: 1rem; font-weight: 500;}
 p{font-size: 1.125rem; font-weight: 400; color: $gray-light; margin: 0 0 1rem;}
+
+@media only screen and (max-width: 1440px) {
+    body{margin: 0;}
+}
+
+@media only screen and (max-width: 768px) {
+    .block-wrapper{padding: 0 1.5rem;}
+}

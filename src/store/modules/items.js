@@ -1,37 +1,33 @@
 import axios from 'axios';
 
 const state = {
-    items: [
-        {
-            id: 1,
-            indicator: true,
-            direct: 'Direct',
-            location: 'Poor',
-            quality: 'Fair',
-            image: 'Good',
-            place: 'Very Good',
-            threat: 'High',
-        },
-        {
-            id: 2,
-            indicator: false,
-            direct: 'Indirect',
-            location: 'Poor',
-            quality: 'Fair',
-            image: 'Good',
-            place: 'Very Good',
-            threat: 'High',
-        }
-    ]
+    items: []
 };
 
 const getters = {
     allItems: (state) => state.items
 };
 
-const actions = {};
+const actions = {
+    async fetchItems({ commit }) {
+        const response = await axios.get('https://my-json-server.typicode.com/ZdravkoBRE/test-tms/items');
 
-const mutations = {};
+        commit('setItems', response.data);
+    },
+
+    async addItems({ commit }, id, location, quality, image, place, threat) {
+        const response = await axios.post('https://my-json-server.typicode.com/ZdravkoBRE/test-tms/items', {
+            id, location, quality, image, place, threat, direct:"Indirect", indicator: false
+        });
+
+        commit('newItem', response.data);
+    }
+};
+
+const mutations = {
+    setItems: (state, items) => (state.items = items),
+    newItem: (state, item) => (state.items.unshift(item))
+}
 
 export default {
     state,
