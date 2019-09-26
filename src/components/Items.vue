@@ -86,7 +86,7 @@ export default {
             e.preventDefault();
 
             this.addItems(this.id, this.location, this.quality, this.image, this.place, this.threat);
-            this.$refs.popup.style.display = "none;"
+            this.$refs.popup.style.display = "none";
         },
         displayPopup() {
 
@@ -145,9 +145,8 @@ export default {
     /* === ITEMS SECTION end === */
 
     /* === FORM POPUP start === */
-    .add-item-wrapper{display: none; position: absolute; top: 50%; background-color: #fff;
-    left: 50%; transform: translate(-50%, -50%);}
-    .add-item-form{display: flex; flex-direction: column; max-width: 20rem; width: 100%; margin: 0 auto;
+    .add-item-wrapper{display: none; position: absolute; top:0px; left: 0px; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.301);}
+    .add-item-form{display: flex; flex-direction: column; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); max-width: 20rem; width: 100%; margin: 0 auto; background: #fff; padding: 1.5rem; border-radius: .5rem;
         input{height: 2.5rem; margin-bottom: .5rem; border: 1px solid $gray-middle; border-radius: .25rem; padding: .25rem .75rem; font-size: 1rem; font-family: $montserrat;}
     }
     /* === FORM POPUP end === */
